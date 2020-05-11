@@ -17,9 +17,9 @@ var criticalLevelSettingElement = document.querySelector(".criticalLevelSetting"
 
 
 // create a variables that will keep track of all three totals.
-var callsTotal = 0;
-var smsTotal = 0;
-var totalBill = 0;
+var totalCall = 0;
+var totalSmes = 0;
+var totalBills = 0;
 //create variables that will keep track of all the settings total
 var callsCostSetting = 0;
 var smsCostSetting = 0;
@@ -39,7 +39,7 @@ function settingsUpdate(){
 
 }//add an event listener for when the add button is pressed
 function radioBillSettingTotal(){
- if (totalBill < criticalLevelSetting){
+ if (totalBills < criticalLevelSetting){
    //in the event listener get the value from the billItemTypeRadio radio buttons
 var checkedRadioBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
 if (checkedRadioBtn){
@@ -47,17 +47,17 @@ if (checkedRadioBtn){
     //console.log(billItemTypeWithSettings);
 
     if (billItemTypeWithSettings = "call"){
-        callsTotal += callsCostSetting;
+        totalCall += callsCostSetting;
     }
     else if (billItemTypeWithSettings = "sms"){
-        smsTotal +=smsCostSetting;
+        totalSmes +=smsCostSetting;
     }
 
    // display the latest totals on screen
-  callsTotalSettings.innerHTML = callsTotal.toFixed(2);
-  smsTotalSettings.innerHTML = smsTotal.toFixed(2);
-  totalBill = callsTotal + smsTotal;
-  totalCostSettings.innerHTML = totalBill.toFixed(2);
+  callsTotalSettings.innerHTML = totalCall.toFixed(2);
+  smsTotalSettings.innerHTML = totalSmes.toFixed(2);
+  totalBills = totalCall + totalSmes;
+  totalCostSettings.innerHTML = totalBills.toFixed(2);
    settingsColor();
   
   }
@@ -69,11 +69,11 @@ if (checkedRadioBtn){
      totalCostSettings.classList.remove("danger");
   
      //color the total based on the criteria
-     if (totalBill >= criticalLevelSetting){
+     if (totalBills >= criticalLevelSetting){
          // adding the danger class will make the text red
          totalCostSettings.classList.add("danger");
      }
-     else if (totalBill >= warningLevelSetting){
+     else if (totalBills >= warningLevelSetting){
          totalCostSettings.classList.add("warning");
        
      }  
