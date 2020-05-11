@@ -10,8 +10,8 @@ const smsTotalElement = document.querySelector(".smsTotalTwo");
 //get a reference of the overall total 
 const totalCostElement = document.querySelector(".totalTwo");
 //create a variable that will keep track of the total bill
-var callsTotal = 0;
-var smsTotal = 0;
+var callsTotalone = 0;
+var smsTotalone = 0;
 //add an event listener for when the add button is pressed
 function radioBillTotal(){
 //in the event listener get the value from the billItemTypeRadio radio buttons
@@ -21,15 +21,15 @@ if (checkedRadioBtn){
 
     // billItemType will be 'call' or 'sms'
     if (billItemType === "call"){
-        callsTotal += 2.75
+        callsTotalone += 2.75
     }
     else if (billItemType === "sms"){
-        smsTotal += 0.75;
+        smsTotalone += 0.75;
     }
     //update the totals that is displayed on the screen.
-    callsTotalElement.innerHTML = callsTotal.toFixed(2);
-    smsTotalElement.innerHTML = smsTotal.toFixed(2);
-    var totalCost = callsTotal + smsTotal;
+    callsTotalElement.innerHTML = callsTotalone.toFixed(2);
+    smsTotalElement.innerHTML = smsTotalone.toFixed(2);
+    var totalCost = callsTotalone + smsTotalone;
     totalCostElement.innerHTML = totalCost.toFixed(2);
     //radioBillTotalColor(totalCost);
 }
