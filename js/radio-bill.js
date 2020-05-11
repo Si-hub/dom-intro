@@ -15,7 +15,6 @@ var smsTotal = 0;
 //add an event listener for when the add button is pressed
 function radioBillTotal(){
 //in the event listener get the value from the billItemTypeRadio radio buttons
-
 var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
 if (checkedRadioBtn){
     var billItemType = checkedRadioBtn.value

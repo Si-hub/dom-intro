@@ -15,10 +15,8 @@ var smsTotal = 0;
 function textBillTotal(){
   
     // get the value entered in the billType textfield
-    var billTypeEntered = billTypeText.value.trim();
-    //alert(billTypeText);
-
-    for (let i = 0; i < billTypeEntered.length; i++) {
+    var billTypeEntered = billTypeText.value;
+    
     // update the correct total
     if (billTypeEntered === "call"){
         callsTotal += 2.75
@@ -26,16 +24,14 @@ function textBillTotal(){
     else if (billTypeEntered === "sms"){
         smsTotal += 0.75;
     }
-}
+    
     //update the totals that is displayed on the screen.
     callsTotalElem.innerHTML = callsTotal.toFixed(2);
     smsTotalElem.innerHTML = smsTotal.toFixed(2);
     var totalCost = callsTotal + smsTotal;
     totalCostElem.innerHTML = totalCost.toFixed(2);
     textBillTotalColor(totalCost);
-    //return totalCost; 
-   
-}
+};
 
 function textBillTotalColor(totalCost)  {
 
