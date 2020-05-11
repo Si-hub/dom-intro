@@ -1,3 +1,4 @@
+
 //get a reference to the sms or call radio buttons
 const billItemTypeWithSettings = document.querySelector(".billItemTypeWithSettings");
 // get refences to all the settings fields
@@ -5,7 +6,7 @@ const callsTotalSettings = document.querySelector(".callTotalSettings");
 const smsTotalSettings = document.querySelector(".smsTotalSettings"); 
 const totalCostSettings = document.querySelector(".totalSettings");
 //get a reference to the add button
-const buttonPrimary = document.querySelector(".button-primary");
+const addBtnPrimary = document.querySelector(".button-primary");
 //get a reference to the 'Update settings' button
 const updateBtn = document.querySelector(".updateSettings");
 // create a variables that will keep track of all the settings
@@ -13,6 +14,7 @@ var callsCostSettingElement = document.querySelector(".callCostSetting");
 var smsCostSettingElement = document.querySelector(".smsCostSetting");
 var warningLevelSettingElement = document.querySelector(".warningLevelSetting");
 var criticalLevelSettingElement = document.querySelector(".criticalLevelSetting");
+
 
 // create a variables that will keep track of all three totals.
 var callsTotal = 0;
@@ -35,15 +37,15 @@ function settingsUpdate(){
   criticalLevelSetting = Number(criticalLevelSettingElement.value);
   settingsColor();
 
-}
-
-//add an event listener for when the add button is pressed
+}//add an event listener for when the add button is pressed
 function radioBillSettingTotal(){
  if (totalBill < criticalLevelSetting){
    //in the event listener get the value from the billItemTypeRadio radio buttons
 var checkedRadioBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
 if (checkedRadioBtn){
     var billItemTypeWithSettings = checkedRadioBtn.value;
+    //console.log(billItemTypeWithSettings);
+
     if (billItemTypeWithSettings = "call"){
         callsTotal += callsCostSetting;
     }
@@ -74,7 +76,5 @@ if (checkedRadioBtn){
      else if (totalBill >= warningLevelSetting){
          totalCostSettings.classList.add("warning");
        
-     }
-      
-};
-buttonPrimary.addEventListener("click",radioBillSettingTotal);
+     }   
+};addBtnPrimary.addEventListener("click",radioBillSettingTotal);
