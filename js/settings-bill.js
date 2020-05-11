@@ -6,7 +6,7 @@ const callsTotalSettings = document.querySelector(".callTotalSettings");
 const smsTotalSettings = document.querySelector(".smsTotalSettings"); 
 const totalCostSettings = document.querySelector(".totalSettings");
 //get a reference to the add button
-const addBtnPrimary = document.querySelector(".button-primary");
+const addBtnPrimary = document.querySelector(".xbtn");
 //get a reference to the 'Update settings' button
 const updateBtn = document.querySelector(".updateSettings");
 // create a variables that will keep track of all the settings
@@ -76,5 +76,6 @@ if (checkedRadioBtn){
      else if (totalBill >= warningLevelSetting){
          totalCostSettings.classList.add("warning");
        
-     }   
+     }  
+     
 };addBtnPrimary.addEventListener("click",radioBillSettingTotal);
