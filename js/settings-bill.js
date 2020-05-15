@@ -2,9 +2,9 @@
 //get a reference to the sms or call radio buttons
 const billItemTypeWithSettings = document.querySelector(".billItemTypeWithSettings");
 // get refences to all the settings fields
-const callsTotalSettings = document.querySelector(".callTotalSettings");
-const smsTotalSettings = document.querySelector(".smsTotalSettings"); 
-const totalCostSettings = document.querySelector(".totalSettings");
+const callsTotalSettingsElement = document.querySelector(".callTotalSettings");
+const smsTotalSettingsElement = document.querySelector(".smsTotalSettings"); 
+const totalCostSettingsElement = document.querySelector(".totalSettings");
 //get a reference to the add button
 const addBtnPrimary = document.querySelector(".xbtn");
 //get a reference to the 'Update settings' button
@@ -25,8 +25,6 @@ var callsCostSetting = 0;
 var smsCostSetting = 0;
 var warningLevelSetting = 0;
 var criticalLevelSetting = 0;
-//add an event listener for when the 'Update settings' button is pressed
-updateBtn.addEventListener("click",settingsUpdate);
 
 function settingsUpdate(){
   //these updated values should be referencing global variables to update
@@ -45,19 +43,19 @@ var checkedRadioBtn = document.querySelector("input[name='billItemTypeWithSettin
 if (checkedRadioBtn){
     var billItemTypeWithSettings = checkedRadioBtn.value;
     //console.log(billItemTypeWithSettings);
-
-    if (billItemTypeWithSettings = "call"){
+  
+    if (billItemTypeWithSettings === "call"){
         totalCall += callsCostSetting;
     }
     else if (billItemTypeWithSettings = "sms"){
-        totalSmes +=smsCostSetting;
+        totalSmes += smsCostSetting;
     }
 
    // display the latest totals on screen
-  callsTotalSettings.innerHTML = totalCall.toFixed(2);
-  smsTotalSettings.innerHTML = totalSmes.toFixed(2);
+  callsTotalSettingsElement.innerHTML = totalCall.toFixed(2);
+  smsTotalSettingsElement.innerHTML = totalSmes.toFixed(2);
   totalBills = totalCall + totalSmes;
-  totalCostSettings.innerHTML = totalBills.toFixed(2);
+  totalCostSettingsElement.innerHTML = totalBills.toFixed(2);
    settingsColor();
   
   }
@@ -65,17 +63,20 @@ if (checkedRadioBtn){
 }
     function settingsColor (){
       
-      totalCostSettings.classList.remove("warning");
-     totalCostSettings.classList.remove("danger");
+      totalCostSettingsElement.classList.remove("warning");
+      totalCostSettingsElement.classList.remove("danger");
   
      //color the total based on the criteria
-     if (totalBills >= criticalLevelSetting){
+     if (totalBills > criticalLevelSetting){
          // adding the danger class will make the text red
-         totalCostSettings.classList.add("danger");
+         totalCostSettingsElement.classList.add("danger");
      }
-     else if (totalBills >= warningLevelSetting){
-         totalCostSettings.classList.add("warning");
+     else if (totalBills > warningLevelSetting){
+         totalCostSettingsElement.classList.add("warning");
        
      }  
      
-};addBtnPrimary.addEventListener("click",radioBillSettingTotal);
+};
+//add an event listener for when the 'Update settings' button is pressed
+updateBtn.addEventListener("click",settingsUpdate);
+addBtnPrimary.addEventListener("click",radioBillSettingTotal);
