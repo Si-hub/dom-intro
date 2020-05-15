@@ -47,7 +47,7 @@ if (checkedRadioBtn){
     if (billItemTypeWithSettings === "call"){
         totalCall += callsCostSetting;
     }
-    else if (billItemTypeWithSettings = "sms"){
+    else if (billItemTypeWithSettings === "sms"){
         totalSmes += smsCostSetting;
     }
 
