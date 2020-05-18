@@ -67,11 +67,11 @@ if (checkedRadioBtn){
       totalCostSettingsElement.classList.remove("danger");
   
      //color the total based on the criteria
-     if (totalBills > criticalLevelSetting){
+     if (totalBills >= criticalLevelSetting){
          // adding the danger class will make the text red
          totalCostSettingsElement.classList.add("danger");
      }
-     else if (totalBills > warningLevelSetting){
+     else if (totalBills >= warningLevelSetting){
          totalCostSettingsElement.classList.add("warning");
        
      }  
