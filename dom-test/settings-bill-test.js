@@ -145,6 +145,7 @@ describe("Warning & Critical level", function(){
             settingsBill.setCallCost(2.00);
             settingsBill.setSmsCost(0.85);
             settingsBill.setWarningLevel(5);
+            settingsBill.setCriticalLevel(10);
 
             settingsBill.makeCall();
             settingsBill.makeCall();
