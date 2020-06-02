@@ -1,4 +1,5 @@
 function BillWithSettings(){
+
     var theCallCost = 0;
     var theSmsCost = 0;
     var theWarningLevel = 0;
@@ -7,7 +8,6 @@ function BillWithSettings(){
     var callCostTotal = 0;
     var smsCostTotal = 0;
 
-    var callCheckCost = 0;
 
     function setCallCost(callCost){
         theCallCost = callCost;
@@ -66,35 +66,26 @@ function getTotalSmsCost(){
 
 function sendSms(){
 
-    if (!hasReachedCriticalLevel()) {
+    if(!hasReachedCriticalLevel()) {
     smsCostTotal += theSmsCost;
     }
     
 }
 
-function hasReachedCriticalLevel (){
+function hasReachedCriticalLevel(){
     return getTotalCost() >= getCriticalLevel()
 
 }
 
-function totalClassName (){
+function totalClassName(){
 
-    if (hasReachedCriticalLevel){
+    if(hasReachedCriticalLevel()){
         return "critical"
     }
-    if (getTotalCost() >= getWarningLevel()){
+    else if(getTotalCost() >= getWarningLevel() && getTotalCost() < getCriticalLevel()){
         return "warning"
     }
-}
-function setRadioCallCost (callCosts) {
-    callCheckCost = callCosts;
-   
-}
-
-function getRadioCallCost(){
-
-    return callCheckCost;
-}
+};
     return {
         // 14 childs functions inside Parent function "BillWithSettings"
         setCallCost,
@@ -111,16 +102,9 @@ function getRadioCallCost(){
         getTotalSmsCost,
         sendSms,
         totalClassName,
-        setRadioCallCost,
-        getRadioCallCost,
+        
     }
 };
-
-
-
-
-
-
 //Factory Function importance: 
 // 1. makes things easy for you, when you are doing testing because you can just call only 
 // the function you want
