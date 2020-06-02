@@ -35,8 +35,8 @@ it("should be able to set the warning level" , function(){
 
     let radioBill = calculateRadioBill();
 
-    radioBill.setRadioWarningLevel(30);
-    assert.equal(30, radioBill.getRadioWarningLevel());
+    radioBill.setRadioWarningLevel(5);
+    assert.equal(5, radioBill.getRadioWarningLevel());
 
 });
 
@@ -44,8 +44,8 @@ it("should be able to set the critical level" , function(){
 
     let radioBill = calculateRadioBill();
 
-    radioBill.setRadioCriticalLevel(50);
-    assert.equal(50, radioBill.getRadioCriticalLevel());
+    radioBill.setRadioCriticalLevel(10);
+    assert.equal(10, radioBill.getRadioCriticalLevel());
 
 });
 
@@ -54,11 +54,11 @@ it("should be able to set the warning and critical level" , function(){
 
     let radioBill = calculateRadioBill();
 
-    radioBill.setRadioWarningLevel(30);
-    radioBill.setRadioCriticalLevel(50);
+    radioBill.setRadioWarningLevel(5);
+    radioBill.setRadioCriticalLevel(10);
 
-    assert.equal(30, radioBill.getRadioWarningLevel());
-    assert.equal(50, radioBill.getRadioCriticalLevel());
+    assert.equal(5, radioBill.getRadioWarningLevel());
+    assert.equal(10, radioBill.getRadioCriticalLevel());
 
 
 });
@@ -73,7 +73,7 @@ describe("Use values", function(){
         let radioBill = calculateRadioBill();
 
         
-        radioBill.setRadioCriticalLevel(50);
+        radioBill.setRadioCriticalLevel(10);
         radioBill.setRadioCallCost(2.75);
         radioBill.setRadioSmsCost(0.75);
 
@@ -91,7 +91,7 @@ describe("Use values", function(){
         let radioBill = calculateRadioBill();
 
         
-        radioBill.setRadioCriticalLevel(50);
+        radioBill.setRadioCriticalLevel(10);
         radioBill.setRadioCallCost(2.75);
         radioBill.setRadioSmsCost(0.75);
 
@@ -109,7 +109,7 @@ describe("Use values", function(){
         let radioBill = calculateRadioBill();
 
         
-        radioBill.setRadioCriticalLevel(50);
+        radioBill.setRadioCriticalLevel(10);
         radioBill.setRadioCallCost(2.75);
         radioBill.setRadioSmsCost(0.75);
 
@@ -126,7 +126,7 @@ describe("Use values", function(){
         let radioBill = calculateRadioBill();
 
         
-        radioBill.setRadioCriticalLevel(50);
+        radioBill.setRadioCriticalLevel(10);
         radioBill.setRadioCallCost(2.75);
         radioBill.setRadioSmsCost(0.75);
 
