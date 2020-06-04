@@ -48,9 +48,7 @@ function calculateRadioBill(){
 
     function checkCall(){
 
-        if (!reachedCriticalLevel()) {
         radioCallTotal += callCheckCost;
-        }
         
     }
     
@@ -68,21 +66,14 @@ function calculateRadioBill(){
     
     function checkSms(){
     
-        if (!reachedCriticalLevel()) {
         radioSmsTotal += smsCheckedCost;
-        }
-        
-    }
-    
-    function reachedCriticalLevel(){
-        return getRadioTotalCost() >= getRadioCriticalLevel()
-    
+          
     }
     
     function radioTotalClassName(){
     
-        if (reachedCriticalLevel()){
-            return "critical"
+        if (getRadioTotalCost() >= getRadioCriticalLevel()){
+            return "danger"
         }
         if (getRadioTotalCost() >= getRadioWarningLevel()){
             return "warning"
@@ -104,7 +95,6 @@ function calculateRadioBill(){
         getRadioTotalCallCost,
         getRadioTotalSmsCost,
         checkSms,
-        reachedCriticalLevel,
         radioTotalClassName
 
         }

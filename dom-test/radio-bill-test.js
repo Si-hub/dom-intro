@@ -159,4 +159,23 @@ describe("Use values", function(){
                 assert.equal("warning", radioBill.radioTotalClassName());
                 assert.equal(6.85, radioBill.getRadioTotalCost());
         });
+
+            it("should return a class name of 'danger' if critical level is reached", function (){
+        
+                    let radioBill = calculateRadioBill();
+        
+                    radioBill.setRadioCallCost(2.00);
+                    radioBill.setRadioSmsCost(0.85);
+                    radioBill.setRadioWarningLevel(5);
+                    radioBill.setRadioCriticalLevel(10);
+        
+                    radioBill.checkCall();
+                    radioBill.checkCall();
+                    radioBill.checkCall();
+                    radioBill.checkCall();
+                    radioBill.checkCall();
+                    
+                    assert.equal("danger", radioBill.radioTotalClassName());
+                    assert.equal(10.00, radioBill.getRadioTotalCost());
+            });
     });
