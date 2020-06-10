@@ -28,7 +28,6 @@ function calculateTextBill(){
         return theeSmsCost;
     }
 
-
     function setTextWarningLevel(warningLevel) {
         textWarningLevel = warningLevel;
        
