@@ -1,9 +1,9 @@
 function calculateTextBill(){
 
-    var theeCallCost = 0;
-    var theeSmsCost = 0;
-    var textWarningLevel = 0;
-    var textCriticalLevel = 0;
+    var theeCallCost = 2.75;
+    var theeSmsCost = 0.75;
+    var textWarningLevel = 30;
+    var textCriticalLevel = 50;
 
     var callTotal = 0;
     var smsTotal = 0;
@@ -76,7 +76,7 @@ function calculateTextBill(){
     function textTotalClassName(){
     
         if (getTextTotal() >= getTextCriticalLevel()){
-            return "danger"
+            return "critical"
         }
         if (getTextTotal() >= getTextWarningLevel()){
             return "warning"

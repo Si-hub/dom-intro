@@ -24,7 +24,7 @@ function settingsUpdate(){
     settingsInstance.setSmsCost(Number(smsCostSettingElement.value));
     settingsInstance.setWarningLevel(Number(warningLevelSettingElement.value));
     settingsInstance.setCriticalLevel(Number(criticalLevelSettingElement.value));
-  settingsColor();
+    settingsColor();
 
 }
 

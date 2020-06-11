@@ -1,9 +1,9 @@
 function calculateRadioBill(){
 
-    var callCheckCost = 0;
-    var smsCheckedCost = 0;
-    var warningLevelChecked = 0;
-    var criticalLevelChecked = 0;
+    var callCheckCost = 2.75;
+    var smsCheckedCost = 0.75;
+    var warningLevelChecked = 30;
+    var criticalLevelChecked = 50;
 
     var radioCallTotal = 0;
     var radioSmsTotal = 0;
@@ -73,7 +73,7 @@ function calculateRadioBill(){
     function radioTotalClassName(){
     
         if (getRadioTotalCost() >= getRadioCriticalLevel()){
-            return "danger"
+            return "critical"
         }
         if (getRadioTotalCost() >= getRadioWarningLevel()){
             return "warning"
