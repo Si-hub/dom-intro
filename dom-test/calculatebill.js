@@ -1,7 +1,7 @@
 function calculateBillEvent(){
 
     var calculateCallCost = 2.75;
-    var calculateSmsCost = 0.75;
+    var calculateSmsCost =  0.75;
     var calculateWarningLevel = 30;
     var calculateCriticalLevel = 50;
 
