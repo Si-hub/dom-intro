@@ -16,6 +16,6 @@ function totalPhoneBill(billString) {
             }
         }
        
-    return billTotal;
+    return billTotal.toFixed(2);
     
     }

@@ -25,13 +25,13 @@ function styleTotalColor(roundedBillTotal)  {
     const currentTotal = Number(roundedBillTotal);
 
 
-billTotalSpanElement.classList.remove("danger");
+billTotalSpanElement.classList.remove("critical");
 billTotalSpanElement.classList.remove("warning");
 
 //color the total based on the criteria
     if (totalPhoneBill(billStringTotalElement.value) >= 30){
         // adding the danger class will make the text red
-       billTotalSpanElement.classList.add("danger");
+       billTotalSpanElement.classList.add("critical");
     }
     else if (totalPhoneBill(billStringTotalElement.value) >= 20 && totalPhoneBill(billStringTotalElement.value) < 30){
        billTotalSpanElement.classList.add("warning");
