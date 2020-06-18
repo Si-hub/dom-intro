@@ -29,11 +29,11 @@ billTotalSpanElement.classList.remove("danger");
 billTotalSpanElement.classList.remove("warning");
 
 //color the total based on the criteria
-    if (totalPhoneBill(billString) >= 30){
+    if (totalPhoneBill(billStringTotalElement.value) >= 30){
         // adding the danger class will make the text red
        billTotalSpanElement.classList.add("danger");
     }
-    else if (totalPhoneBill(billString) >= 20 && totalPhoneBill(billString) < 30){
+    else if (totalPhoneBill(billStringTotalElement.value) >= 20 && totalPhoneBill(billStringTotalElement.value) < 30){
        billTotalSpanElement.classList.add("warning");
     
 } 
